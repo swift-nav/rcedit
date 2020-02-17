@@ -22,3 +22,7 @@ jobs:
           & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\bin\MSBuild.exe" rcedit.sln -property:Platform=${env:PLATFORM}
         env:
           PLATFORM: ${{ matrix.platform }}
+      - uses: actions/upload-artifact@v1
+        with:
+          name: rcedit-${{ matrix.platform }}.exe
+          path: Default
