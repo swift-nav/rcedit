@@ -12,8 +12,11 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    strategy:
+      matrix:
+        platform: [x64, Win32]
     steps:
       - uses: actions/checkout@v2
       - name: Build
         run: |
-          & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\bin\MSBuild.exe" rcedit.sln
+          & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\bin\MSBuild.exe" rcedit.sln -property:Platform=${env:platform}
