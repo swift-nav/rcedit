@@ -17,11 +17,6 @@ jobs:
         platform: [x64, Win32]
     steps:
       - uses: actions/checkout@v2
-      - name: Gyp
-        run: |
-          git clone --depth=1 https://chromium.googlesource.com/external/gyp
-          gyp\gyp rcedit.gyp --debug=all --depth=.
-          ls
       - name: Build
         run: |
           & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\bin\MSBuild.exe" rcedit.sln -maxCpuCount -property:Platform=${env:PLATFORM}
