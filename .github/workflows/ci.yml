@@ -45,7 +45,7 @@ jobs:
           mv rcedit-x64/rcedit.exe artifacts/rcedit-x64.exe
           mv rcedit-Win32/rcedit.exe artifacts/rcedit-Win32.exe
       - name: Upload Release
-        uses: svenstaro/upload-release-action@v1-release
+        uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: artifacts/rcedit-*.exe
