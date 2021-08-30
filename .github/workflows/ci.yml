@@ -35,9 +35,12 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: rcedit-x64.exe
+          path: rcedit-x64
       - uses: actions/download-artifact@v2
         with:
           name: rcedit-Win32.exe
+          path: rcedit-Win32
+      - run: ls -laRt
       - name: Upload Release
         uses: svenstaro/upload-release-action@v1-release
         with:
