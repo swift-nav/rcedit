@@ -40,12 +40,15 @@ jobs:
         with:
           name: rcedit-Win32.exe
           path: rcedit-Win32
-      - run: ls -laRt
+      - run: |
+          mkdir artifacts
+          mv rcedit-x64/rcedit.exe artifacts/rcedit-x64.exe
+          mv rcedit-Win32/rcedit.exe artifacts/rcedit-Win32.exe
       - name: Upload Release
         uses: svenstaro/upload-release-action@v1-release
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: rcedit-*.exe
+          file: artifacts/rcedit-*.exe
           tag: ${{ github.ref }}
           overwrite: true
           file_glob: true
