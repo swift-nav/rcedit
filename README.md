@@ -4,12 +4,12 @@ Command line tool to edit resources of exe file on Windows.
 
 ## Executables
 
-Prebuilt binaries can be found in the artifacts of appveyor jobs.
+Prebuilt binaries can be found in on the GitHub releases page.
 
 ## Building
 
 1. Clone the repository
-2. Open `rcedit.sln` with Visual Studio 2015 or above
+2. Open `rcedit.sln` with Visual Studio 2019 or above
 3. Build
 
 ## Generate solution files
