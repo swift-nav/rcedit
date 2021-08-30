@@ -26,3 +26,23 @@ jobs:
         with:
           name: rcedit-${{ matrix.platform }}.exe
           path: Default
+
+  release:
+    needs: [build]
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: rcedit-x64.exe
+      - uses: actions/download-artifact@v2
+        with:
+          name: rcedit-Win32.exe
+      - name: Upload Release
+        uses: svenstaro/upload-release-action@v1-release
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: rcedit-*.exe
+          tag: ${{ github.ref }}
+          overwrite: true
+          file_glob: true
