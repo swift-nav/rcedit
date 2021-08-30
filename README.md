@@ -1,4 +1,4 @@
-# rcedit [![Build status](https://ci.appveyor.com/api/projects/status/99eokln2emhidcej?svg=true)](https://ci.appveyor.com/project/zcbenz/rcedit/branch/master)
+# rcedit [![CI](https://github.com/swift-nav/rcedit/actions/workflows/ci.yml/badge.svg)](https://github.com/swift-nav/rcedit/actions/workflows/ci.yml)
 
 Command line tool to edit resources of exe file on Windows.
 
